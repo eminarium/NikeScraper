@@ -5,12 +5,14 @@ class NikeScraper
 
   attr_accessor :url, :parsed_page, :products
 
+  # Provide url for class initialization
   def initialize(url)
     @url = url
     @parsed_page = ""
     @products = []
   end
 
+  # Method for scraping and gathering data into 'products' array
   def get_product_details
     doc = HTTParty.get(url)
     parsed_page ||= Nokogiri::HTML(doc)
@@ -26,6 +28,7 @@ class NikeScraper
     end
   end
 
+  # Method to return report in String format
   def prepare_report
     output = "Total scraped items: #{products.size} \n"
     output << "#"*55
@@ -38,6 +41,8 @@ class NikeScraper
     output
   end
 
+  # Returns an advice if no scraping has been performed yet.
+  # Otherwise, returns formatted scraped data.
   def to_s
     if products.empty?
       "No products have been scraped. Use 'get_product_details' method first."
