@@ -11,6 +11,5 @@ Class has 3 methods:
 ### Used gems
 Scraper program uses 'nokogiri' and 'HTTParty' gems
 
-- The Nokogiri::HTML construct takes in the opened file’s info and wraps it in a special Nokogiri data object.
-- HTTParty is a gem that makes HTTP fun! It is the gem our scraper will use to send an HTTP request to the page(s) we’re scraping.
-
+- The [Nokogiri::HTML](https://github.com/sparklemotion/nokogiri) construct takes in the opened file’s info and wraps it in a special Nokogiri data object.
+- [HTTParty](https://github.com/jnunemaker/httparty) is a gem that makes HTTP fun! It is the gem our scraper will use to send an HTTP request to the page(s) we’re scraping.
